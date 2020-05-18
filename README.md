@@ -13,7 +13,7 @@ Demo: https://kathirr007.github.io/vue-confirm-dialog-fork/
 ##### Install
 
 ```
-npm install --save vue-confirm-dialog
+npm install --save vue-confirm-dialog-fork
 ```
 
 

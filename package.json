@@ -1,6 +1,6 @@
 {
-  "name": "vue-confirm-dialog",
-  "version": "0.2.5",
+  "name": "vue-confirm-dialog-fork",
+  "version": "0.2.5a",
   "private": false,
   "main": "src/index.js",
   "scripts": {
@@ -51,7 +51,7 @@
   "description": "simple action confirm",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aslanon/vue-confirm.git"
+    "url": "git+https://github.com/kathirr007/vue-confirm-dialog-fork.git"
   },
   "keywords": [
     "vue",
@@ -60,10 +60,10 @@
     "popup",
     "plugin"
   ],
-  "author": "Onur Aslan <aslanon.tr@gmail.com>",
+  "author": "Kathirr007 <kathirr007@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aslanon/vue-confirm/issues"
+    "url": "https://github.com/kathirr007/vue-confirm-dialog-fork/issues"
   },
-  "homepage": "https://github.com/aslanon/vue-confirm#readme"
+  "homepage": "https://github.com/kathirr007/vue-confirm-dialog-fork#readme"
 }
