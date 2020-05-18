@@ -1,10 +1,10 @@
-[![issues](https://badgen.net/github/issues/aslanon/vue-confirm-dialog)](https://badge.fury.io/js/vue-confirm-dialog) [![npm](https://img.shields.io/npm/dm/vue-confirm-dialog.svg)](https://www.npmjs.com/package/vue-confirm-dialog) ![npm version](https://badge.fury.io/js/vue-confirm-dialog.svg)
+<!-- [![issues](https://badgen.net/github/issues/aslanon/vue-confirm-dialog)](https://badge.fury.io/js/vue-confirm-dialog) [![npm](https://img.shields.io/npm/dm/vue-confirm-dialog.svg)](https://www.npmjs.com/package/vue-confirm-dialog) ![npm version](https://badge.fury.io/js/vue-confirm-dialog.svg) -->
 
-### Vue.js Confirm Dialog
+### This is the Fork Project of Vue.js Confirm Dialog
 
 ---
 
-Demo: https://aslanon.github.io/vue-confirm-dialog/
+Demo: https://kathirr007.github.io/vue-confirm-dialog-fork/
 
 ![vue-confirm](https://media.giphy.com/media/IcjDD7frmVB0KaGvG4/source.gif)
 
