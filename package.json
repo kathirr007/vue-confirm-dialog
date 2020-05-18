@@ -1,6 +1,6 @@
 {
   "name": "vue-confirm-dialog-fork",
-  "version": "0.2.5a",
+  "version": "0.2.5b",
   "private": false,
   "main": "src/index.js",
   "scripts": {
