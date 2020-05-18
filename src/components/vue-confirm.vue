@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// import sanitizeHTML from "sanitize-html";
 export default {
   name: "VueConfirm",
   data() {
@@ -41,7 +42,7 @@ export default {
       this.$vueConfirm.confirm(
         {
           title: "Confirm",
-          message: `Are you sure? ${item.text} will be remove?`,
+          message: `Are you sure? <strong>${item.text}</strong> will be remove?`,
           auth: false,
           button: {
             yes: "OK"

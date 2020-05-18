@@ -10,7 +10,7 @@
         >
           <span class="vc-text-grid">
             <h4 v-if="title" class="vc-title">{{ title }}</h4>
-            <p v-if="message" class="vc-text">{{ message }}</p>
+            <p v-if="message" class="vc-text" v-html="purifyHTML(message)"></p>
             <span v-if="isAuth">
               <input
                 v-focus
@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import sanitizeHTML from "sanitize-html";
 export default {
   name: "VueConfirm",
   props: {
@@ -117,6 +118,9 @@ export default {
 
     closeDialog() {
       this._emit("close");
+    },
+    purifyHTML(message) {
+      return sanitizeHTML(message);
     }
   },
 
