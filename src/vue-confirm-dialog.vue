@@ -2,15 +2,10 @@
   <transition name="fade">
     <div v-show="isShow" class="vc-overlay" id="vueConfirm">
       <transition name="zoom">
-        <div
-          v-if="isShow"
-          ref="vueConfirm"
-          class="vc-container"
-          v-on:keyup.esc="closeDialog"
-        >
+        <div v-if="isShow" ref="vueConfirm" class="vc-container" v-on:keyup.esc="closeDialog">
           <span class="vc-text-grid">
             <h4 v-if="title" class="vc-title">{{ title }}</h4>
-            <p v-if="message" class="vc-text" v-html="purifyHTML(message)"></p>
+            <p v-if="message" class="vc-text" v-html="message"></p>
             <span v-if="isAuth">
               <input
                 v-focus
@@ -23,18 +18,13 @@
               />
             </span>
           </span>
-          <div
-            class="vc-btn-grid"
-            :class="{ isMono: !button.no || !button.yes }"
-          >
+          <div class="vc-btn-grid" :class="{ isMono: !button.no || !button.yes }">
             <button
               v-if="button.no"
               :disabled="isLoading || isConfirmLoading"
               @click.stop="_emit('close')"
               class="vc-btn left"
-            >
-              {{ button.no }}
-            </button>
+            >{{ button.no }}</button>
             <button
               v-if="button.yes"
               :disabled="
@@ -42,9 +32,7 @@
               "
               @click.stop="saveChanges()"
               class="vc-btn"
-            >
-              {{ button.yes }}
-            </button>
+            >{{ button.yes }}</button>
           </div>
         </div>
       </transition>
@@ -53,42 +41,42 @@
 </template>
 
 <script>
-import sanitizeHTML from "sanitize-html";
+// import sanitizeHTML from "sanitize-html";
 export default {
   name: "VueConfirm",
   props: {
     isShow: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isLoading: {
       type: Boolean,
-      default: false
+      default: false,
     },
     isAuth: {
       type: Boolean,
-      default: false
+      default: false,
     },
     title: {
       type: String,
-      default: "Confirm"
+      default: "Confirm",
     },
     message: {
       type: String,
-      default: "Are you sure?"
+      default: "Are you sure?",
     },
     button: {
       type: Object,
-      default: function() {
+      default: function () {
         return { no: "Cancel", yes: "Save" };
-      }
-    }
+      },
+    },
   },
 
   data() {
     return {
       password: null,
-      isConfirmLoading: false
+      isConfirmLoading: false,
     };
   },
 
@@ -119,9 +107,9 @@ export default {
     closeDialog() {
       this._emit("close");
     },
-    purifyHTML(message) {
+    /* purifyHTML(message) {
       return sanitizeHTML(message);
-    }
+    } */
   },
 
   beforeDestroy() {
@@ -132,7 +120,7 @@ export default {
   beforeMount() {
     document.addEventListener("click", this.documentClick);
     document.addEventListener("touchstart", this.documentClick);
-  }
+  },
 };
 </script>
 

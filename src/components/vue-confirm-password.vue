@@ -21,19 +21,19 @@ export default {
       list: [
         {
           text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-          id: 4
+          id: 4,
         },
         {
           text:
             "Adipisci explicabo, odio ullam totam odit tempore optio distinctio vel aliquam officia nam et ex suscipit ratione accusantium minima veniam ipsum laborum.",
-          id: 5
+          id: 5,
         },
         {
           text:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci explicabo, odio ullam totam odit tempore optio distinctio vel aliquam officia nam et ex suscipit ratione accusantium minima veniam ipsum laborum.",
-          id: 6
-        }
-      ]
+          id: 6,
+        },
+      ],
     };
   },
   methods: {
@@ -42,20 +42,20 @@ export default {
       this.$vueConfirm.confirm(
         {
           title: "Confirm",
-          message: `Are you sure? ${item.text} will be remove?`,
+          message: `Are you sure? <strong>${item.text}</strong> will be remove?`,
           auth: true, // with password confirm
           button: {
             no: "No",
-            yes: "Yes"
-          }
+            yes: "Yes",
+          },
         },
         /**
          * Callback
          * @param {Boolean} confirm
          * @param {String} password
          */
-        function(confirm, password) {
-          console.log(password)
+        function (confirm, password) {
+          console.log(password);
           if (confirm == true) {
             for (let i = 0; i < self.list.length; i++) {
               if (self.list[i].id == item.id) {
@@ -66,8 +66,8 @@ export default {
           }
         }
       );
-    }
-  }
+    },
+  },
 };
 </script>
 

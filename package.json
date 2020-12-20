@@ -1,6 +1,6 @@
 {
-  "name": "vue-confirm-dialog-2",
-  "version": "1.0.2b",
+  "name": "vue-confirm-dialog-fork",
+  "version": "1.0.3b",
   "private": false,
   "main": "src/index.js",
   "scripts": {
@@ -22,7 +22,6 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
     "prettier": "^1.18.2",
-    "sanitize-html": "^1.23.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
