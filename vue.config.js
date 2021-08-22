@@ -1,5 +1,6 @@
 module.exports = {
   lintOnSave: false,
   // publicPath: "/",
-  publicPath: "vue-confirm-dialog-fork"
+  publicPath:
+    process.env.NODE_ENV === "production" ? "/vue-confirm-dialog-fork/" : "/",
 };
