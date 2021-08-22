@@ -6,6 +6,7 @@
     :title="dialog.title"
     :message="dialog.message"
     :button="dialog.button"
+    :titleLevel="dialog.titleLevel"
   ></vue-confirm-dialog>
 </template>
 
@@ -20,7 +21,7 @@ export default {
     },
     dialog() {
       return this.$root.dialog;
-    }
-  }
+    },
+  },
 };
 </script>

@@ -2,9 +2,19 @@
   <transition name="fade">
     <div v-show="isShow" class="vc-overlay" id="vueConfirm">
       <transition name="zoom">
-        <div v-if="isShow" ref="vueConfirm" class="vc-container" v-on:keyup.esc="closeDialog">
+        <div
+          v-if="isShow"
+          ref="vueConfirm"
+          class="vc-container"
+          v-on:keyup.esc="closeDialog"
+        >
           <span class="vc-text-grid">
-            <h4 v-if="title" class="vc-title">{{ title }}</h4>
+            <template v-if="title">
+              <dialogTitle :level="titleLevel" class="vc-title">
+                {{ title }}
+              </dialogTitle>
+            </template>
+            <!-- <h4 v-if="title" class="vc-title">{{ title }}</h4> -->
             <p v-if="message" class="vc-text" v-html="message"></p>
             <span v-if="isAuth">
               <input
@@ -18,13 +28,18 @@
               />
             </span>
           </span>
-          <div class="vc-btn-grid" :class="{ isMono: !button.no || !button.yes }">
+          <div
+            class="vc-btn-grid"
+            :class="{ isMono: !button.no || !button.yes }"
+          >
             <button
               v-if="button.no"
               :disabled="isLoading || isConfirmLoading"
               @click.stop="_emit('close')"
               class="vc-btn left"
-            >{{ button.no }}</button>
+            >
+              {{ button.no }}
+            </button>
             <button
               v-if="button.yes"
               :disabled="
@@ -32,7 +47,9 @@
               "
               @click.stop="saveChanges()"
               class="vc-btn"
-            >{{ button.yes }}</button>
+            >
+              {{ button.yes }}
+            </button>
           </div>
         </div>
       </transition>
@@ -42,8 +59,11 @@
 
 <script>
 // import sanitizeHTML from "sanitize-html";
+import dialogTitle from "@/components/dialog-title";
+
 export default {
   name: "VueConfirm",
+  components: { dialogTitle },
   props: {
     isShow: {
       type: Boolean,
@@ -61,13 +81,17 @@ export default {
       type: String,
       default: "Confirm",
     },
+    titleLevel: {
+      type: Number,
+      default: 1,
+    },
     message: {
       type: String,
       default: "Are you sure?",
     },
     button: {
       type: Object,
-      default: function () {
+      default: function() {
         return { no: "Cancel", yes: "Save" };
       },
     },
