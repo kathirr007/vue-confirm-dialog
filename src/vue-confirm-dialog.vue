@@ -59,7 +59,7 @@
 
 <script>
 // import sanitizeHTML from "sanitize-html";
-import dialogTitle from "@/components/dialog-title";
+import dialogTitle from "./components/dialog-title";
 
 export default {
   name: "VueConfirm",
